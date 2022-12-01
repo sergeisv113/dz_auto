@@ -12,6 +12,7 @@ export const pureAddUser = (name: string, setError: (error: string) => void, set
    if (name.trim() !== ''){
         addUserCallback(name)
        setName('')
+       setError('')
    } else {
        setError('Ошибка! Введите имя!')
    }
@@ -59,7 +60,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
     }
 
     const totalUsers = users.length  // need to fix
-    const lastUserName = name // need to fix
+    const lastUserName = users[users.length - 1]?.name // need to fix
 
     return (
         <Greeting
