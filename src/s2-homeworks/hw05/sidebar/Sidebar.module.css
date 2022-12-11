@@ -1,31 +1,28 @@
 .sidebar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    background-color: white;
-    overflow-x: hidden;
-    padding-top: 60px;
-    transition: 0.5s;
-    font-size: 0;
+    display: none;
 }
 
 .sidebar.open {
-    display: block;
-    width: 317px;
-    padding: 63px 5px 8px 70px;
-    font-size: 22px;
-    color: black;
-    transition: 0.5s;
+    padding: 20px;
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    background: white;
+    top: 0;
+    z-index: 3;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .background {
-    position: fixed;
-    z-index: 1;
-    background-color: black;
-    opacity: 0.3;
+    background: black;
+    opacity: .4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
     width: 100%;
     height: 100%;
 }
@@ -33,30 +30,30 @@
 .nav {
     display: flex;
     flex-direction: column;
-    row-gap: 45px;
-    font-weight: 600;
+    margin-top: 1.4rem;
 }
 
 .nav a {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 1.1rem;
     color: black;
-    text-decoration: none;
 }
 
 .nav a:hover {
-    color: #58ACFF;
+    color: #2590ff;
 }
 
 .nav a.active {
-    color: #0059B2;
-    text-decoration-line: underline;
-    text-decoration-style: solid;
+    color: #0066cc;
+    text-decoration: underline;
 }
 .close {
-    border: none;
+    align-self: end;
+    background: white;
+    cursor: pointer;
 }
 
 .close img {
-    position: absolute;
-    top: 16px;
-    right: 24px;
 }
