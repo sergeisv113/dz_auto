@@ -1,9 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 .select {
+    margin-top: 18px;
+    width: 165px;
+    height: 24px;
+    background: #FFFFFF;
+    border: 1px solid #C2C2C2;
+    border-radius: 2px;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #000000;
 }
 
 .select:focus {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #0066CC;
 }
 
-
 .option:hover {
+    box-shadow: black;
 }
