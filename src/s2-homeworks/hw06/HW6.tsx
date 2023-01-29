@@ -18,7 +18,7 @@ const HW6 = () => {
         saveState<string>('hw6-editable-span-value', value)
     }
     const restore = ()  => {
-        setValue(restoreState<string>('editable span value', 'nothing to restore'))
+        setValue(restoreState<string>('editable span value', value))
     }
 
     return (
@@ -29,7 +29,7 @@ const HW6 = () => {
             <div className={s2.hw}>
                 <div className={s.editableSpanContainer}>
                     <SuperEditableSpan
-                        id={'hw6-spanable-input'}
+                        id={'hw6-spaneditable-input'}
                         value={value}
                         onChangeText={setValue}
                         spanProps={{
