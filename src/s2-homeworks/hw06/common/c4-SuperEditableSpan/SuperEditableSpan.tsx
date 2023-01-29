@@ -23,7 +23,7 @@ type SuperEditableSpanType = Omit<DefaultInputPropsType, 'type'> & {
     onEnter?: () => void
     error?: string
 
-    spanProps?: DefaultSpanPropsType & {defaultText?: string}// пропсы для спана
+    spanProps?: DefaultSpanPropsType  & {defaultText?: string}// пропсы для спана
 }
 
 const SuperEditableSpan: React.FC<SuperEditableSpanType> = (
@@ -92,4 +92,5 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = (
         </>
     )
 }
+
 export default SuperEditableSpan
