@@ -2,6 +2,12 @@
 }
 
 .span {
+    display: inline-block;
+    border: #565656 solid 1px;
+    height: 31px;
+    padding-top: 10px;
+    cursor: pointer;
+    color: #77aaff
 }
 
 .input {
