@@ -1,23 +1,40 @@
 .item {
+    border-top: 1px solid #E5E5E5;
 }
 
 .item:last-of-type {
 }
 
 .users {
+    width: 663px;
+    margin-top: 10px;
+    margin-left: 70px;
+    padding-left: 10px;
+    border-collapse: collapse;
 }
 
 .buttonsContainer {
+    display: flex;
+    margin-left: 300px;
+    margin-top: 30px;
+    gap: 18px;
 }
 
 .container {
+
 }
 
 .thead {
+    background-color: #E5E5E5;
+    font-weight: bold;
+    height: 36px;
 }
 
 .nameCol {
+    padding: 15px;
 }
 
 .ageCol {
+    padding-right: 87px;
+    font-weight: bold;
 }
