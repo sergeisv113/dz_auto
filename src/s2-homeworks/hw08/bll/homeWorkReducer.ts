@@ -3,31 +3,21 @@ import {UserType} from '../HW8'
 const initialState: UserType[] = []
 
 export const homeWorkReducer = (state: UserType[] = initialState, action: ActionType): UserType[] => { // need to fix any
-
+    const cloneState = [...state]
     switch (action.type) {
-
         case 'sort': {
-            let clone = [...state]
-            switch(action.payload) {
-                case "up": {
-                    return clone.sort((a, b) => (a.name < b.name ? -1 : 1));
-                }
-                case 'down': {
-                    return clone.sort((a, b) => (a.name > b.name ? -1 : 1));
-                }
-            }
+            return cloneState.sort((a,b) => action.payload === 'up'
+                ? a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1
+                : a.name.toLowerCase() > b.name.toLowerCase() ?  -1 : 1
+            ) // need to fix
         }
         case 'check': {
-            return state.filter(state => state.age >= 18)
+            return state.filter(e =>  e.age >= action.payload)
         }
         default:
-            return state
+            return cloneState
     }
 }
-/*export const sortUpUsersAC = (initialState: UserType[]) => ({type: 'sort', payload: 'up' })
-export const sortDownUsersAC = (initialState: UserType[]) => ({type: 'sort', payload: 'down' })
-
-export const sortAgeUsersAC = (initialState: UserType[]) => ({type: 'sort', payload: 'number' })*/
 
 type ActionType =
     | { type: 'sort'; payload: 'up' | 'down' }
