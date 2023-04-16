@@ -20,10 +20,10 @@ function HW11() {
         if (Array.isArray(value)) {
             setValue1(value[0])
             setValue2(value[1])
-        } else setValue1(value)
+        } else {
+            setValue1(value)
+        }
     }
-
-
 
     return (
         <div id={'hw11'}>
@@ -36,8 +36,8 @@ function HW11() {
                         <SuperRange
                             id={'hw11-single-slider'}
                             // сделать так чтоб value1 изменялось // пишет студент
-                            onChange={change}
                             value={value1}
+                            onChange={change}
                         />
                     </div>
                     <div className={s.wrapper}>
@@ -45,8 +45,8 @@ function HW11() {
                         <SuperRange
                             id={'hw11-double-slider'}
                             // сделать так чтоб value1/2 изменялось // пишет студент
-                            onChange={change}
                             value={[value1, value2]}
+                            onChange={change}
                         />
                         <span id={'hw11-value-2'} className={s.number}>{value2}</span>
                     </div>
