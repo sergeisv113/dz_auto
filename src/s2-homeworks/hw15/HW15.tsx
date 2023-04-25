@@ -119,12 +119,12 @@ const HW15 = () => {
 
                 <div className={s.rowHeader}>
                     <div className={s.techHeader}>
-                        tech
+                        <h4>Tech</h4>
                         <SuperSort sort={sort} value={'tech'} onChange={onChangeSort}/>
                     </div>
 
                     <div className={s.developerHeader}>
-                        developer
+                        <h4>Developer</h4>
                         <SuperSort sort={sort} value={'developer'} onChange={onChangeSort}/>
                     </div>
                 </div>
