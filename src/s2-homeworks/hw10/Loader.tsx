@@ -1,6 +1,6 @@
 import s from './Loader.module.css'
-import Img from './circles.svg'
+import {CircularProgress} from "@mui/material";
 
 export const Loader = () => <div className={s.loader}>
-    <img src={Img}/>
+    <CircularProgress />
 </div>

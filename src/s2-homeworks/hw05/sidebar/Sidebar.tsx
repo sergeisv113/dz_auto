@@ -1,5 +1,5 @@
 import React, {FC} from 'react'
-import {NavLink, useLocation} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import s from './Sidebar.module.css'
 import {PATH} from '../Pages'
 import closeIcon from './closeOutline.svg'
@@ -12,6 +12,9 @@ type PropsType = {
 export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
     const sidebarClass = s.sidebar
         + (open ? ' ' + s.open : '')
+
+    const isActiveClass = (navData: { isActive: boolean }) => (navData.isActive ? s.active : '')
+
     return (
         <>
             {/*затемнение справа от открытого меню*/}
@@ -31,7 +34,7 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                         id={'hw5-pre-junior-link'}
                         to={PATH.PRE_JUNIOR}
                         onClick={handleClose}
-                        className={useLocation().pathname === PATH.PRE_JUNIOR ? s.active : s.nav} // делает студент
+                        className={isActiveClass} // делает студент
                     >
                         Pre-junior
                     </NavLink>
@@ -39,7 +42,7 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                         id={'hw5-junior-link'}
                         to={PATH.JUNIOR}
                         onClick={handleClose}
-                        className={useLocation().pathname === PATH.JUNIOR ? s.active : s.nav} // делает студент
+                        className={isActiveClass} // делает студент
                     >
                         Junior
                     </NavLink>
@@ -47,7 +50,7 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                         id={'hw5-junior-plus-link'}
                         to={PATH.JUNIOR_PLUS}
                         onClick={handleClose}
-                        className={useLocation().pathname === PATH.JUNIOR_PLUS ? s.active : s.nav}  // делает студент
+                        className={isActiveClass} // делает студент
                     >
                         Junior Plus
                     </NavLink>

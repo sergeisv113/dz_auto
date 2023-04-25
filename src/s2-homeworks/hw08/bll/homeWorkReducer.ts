@@ -1,24 +1,24 @@
 import {UserType} from '../HW8'
 
-const initialState: UserType[] = []
-
-export const homeWorkReducer = (state: UserType[] = initialState, action: ActionType): UserType[] => { // need to fix any
-    const cloneState = [...state]
-    switch (action.type) {
-        case 'sort': {
-            return cloneState.sort((a,b) => action.payload === 'up'
-                ? a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1
-                : a.name.toLowerCase() > b.name.toLowerCase() ?  -1 : 1
-            ) // need to fix
-        }
-        case 'check': {
-            return state.filter(e =>  e.age >= action.payload)
-        }
-        default:
-            return cloneState
-    }
-}
-
 type ActionType =
     | { type: 'sort'; payload: 'up' | 'down' }
     | { type: 'check'; payload: number }
+
+export const homeWorkReducer = (state: UserType[], action: ActionType): UserType[] => {
+    switch (action.type) {
+        case 'sort': { // by name
+            const stateCopy = [...state]
+            const sortedStateCopy = stateCopy.sort((a, b) => {
+                if (a.name > b.name) return 1
+                else if (a.name < b.name) return -1
+                else return 0
+            })
+            return action.payload === 'up' ? sortedStateCopy : sortedStateCopy.reverse()
+        }
+        case 'check': {
+            return state.filter(u => u.age > 18)
+        }
+        default:
+            return state
+    }
+}

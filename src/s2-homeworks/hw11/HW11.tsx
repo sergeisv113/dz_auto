@@ -1,13 +1,13 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import s from './HW11.module.css'
 import s2 from '../../s1-main/App.module.css'
-import { restoreState } from '../hw06/localStorage/localStorage'
+import {restoreState} from '../hw06/localStorage/localStorage'
 import SuperRange from './common/c7-SuperRange/SuperRange'
 
 /*
-* 1 - передать значения в оба слайдера
-* 2 - дописать типы и логику функции change
-* 3 - сделать стили в соответствии с дизайном
+* 1 - передать значения в оба слайдера +
+* 2 - дописать типы и логику функции change +
+* 3 - сделать стили в соответствии с дизайном +
 * */
 
 function HW11() {
@@ -15,13 +15,12 @@ function HW11() {
     const [value1, setValue1] = useState(restoreState<number>('hw11-value1', 0))
     const [value2, setValue2] = useState(restoreState<number>('hw11-value2', 100))
 
-    const change = (event: Event, value: number | number[], ) => {
+    const change = (event: Event, value: number | number[]) => {
         // пишет студент // если пришёл массив - сохранить значения в оба useState, иначе в первый
-        if (Array.isArray(value)) {
+        if (typeof value === 'number') setValue1(value)
+        else {
             setValue1(value[0])
             setValue2(value[1])
-        } else {
-            setValue1(value)
         }
     }
 

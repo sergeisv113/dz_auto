@@ -1,19 +1,10 @@
 .buttonsContainer {
-    margin-top: 16px;
-}
-
-.buttonsContainer button {
-    display: inline-flex;
-    width: 135px;
-    height: 30px;
-}
-
-.buttonsContainer button:first-child {
-    margin-right: 24px;
+    display: flex;
+    gap: 20px;
 }
 
 .editableSpanContainer {
-    margin-top: 34px;
-    width: 276px;
+    margin-bottom: 20px;
+    color: #0080FF;
     height: 36px;
 }

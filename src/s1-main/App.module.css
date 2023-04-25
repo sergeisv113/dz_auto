@@ -3,10 +3,19 @@
 }
 
 .hw {
-    border: 1px grey solid;
-    padding: 10px;
+    min-height: 336px;
+    padding: 24px 70px 39px 70px;
+    border-bottom-width: medium;
+    border-bottom-color: cornflowerblue;
+    border-bottom-style: solid;
 }
 
 .hwTitle {
-    font-size: 40px;
+    border-bottom-width: medium;
+    border-bottom-color: cornflowerblue;
+    border-bottom-style: solid;
+    height: 37px;
+    font-size: 22px;
+    margin-top: 20px;
+    padding-left: 70px;
 }
